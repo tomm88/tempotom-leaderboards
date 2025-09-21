@@ -1,3 +1,12 @@
+## Initial Setup
+
+You will need to have node and a package manager (npm, yarn, pnpm) installed on your computer. This is using node v22.12.0 and was npm v11.6.
+
+Once these are installed on your computer, go into this directory in a terminal and run ```npm install```. After this is done you can run ```npm run dev``` to launch it on localhost:3000.
+
+Inside the ```frontend``` folder, create a file called ```.env```. Contact AshenDeimos for environment variables that may be needed.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
