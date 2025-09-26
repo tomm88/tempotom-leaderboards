@@ -3,9 +3,20 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Menubar } from 'primereact/menubar';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const TopNav = () => {
     const router = useRouter();
+      const { data: session } = useSession();
+      console.log(session);
+
+    function AuthHandle() {
+      if (session) {
+        signOut();
+      } else {
+        signIn();
+      }
+    }
 
     const customHome = () => (
         <Link href={'/'}>
@@ -38,7 +49,10 @@ const TopNav = () => {
         label: "Contact",
         command: () => router.push('/contact')
       },
-      {label: "Login"}
+      {
+        label: session ? "Logout" : "Login",
+        command: () => AuthHandle(),
+      }
     ]
 
     return (
